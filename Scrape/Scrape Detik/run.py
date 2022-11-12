@@ -5,12 +5,12 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route ('/base')
+@app.route ('/')
 def home():
     return render_template('base.html')
 
 
-@app.route ('/detik-populer')
+@app.route ('/detik-scraper')
 def detik_populer():
     html_doc = requests.get('https://www.detik.com/terpopuler')
 
