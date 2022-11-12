@@ -5,9 +5,9 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route ('/')
+@app.route ('/base')
 def home():
-    return render_template('index.html')
+    return render_template('base.html')
 
 
 @app.route ('/detik-populer')
@@ -26,10 +26,14 @@ def detik_populer():
 
     text = soup.findAll(attrs={'class': 'media__text'})
 
-    return render_template('index.html', images = images)
+    return render_template('detik-scraper.html', images = images)
 
 
-
+@app.route ('/idr-rates')
+def idr_rates():
+    source = requests.get('http://www.floatrates.com/daily/idr.json')
+    json_data = source.json()
+    return render_template('idr-rates.html' , datas= json_data.values)
 
 
 
