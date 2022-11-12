@@ -3,20 +3,22 @@
 <table class="table">
     <thead>
       <tr>
-        <th>Code</th>
-        <th>Name</th>
+        <th>code</th>
+        <th>name</th>
         <th>date</th>
         <th>inverseRate</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>{{data['code']}}</td>
-        <td>{{data['name']}}</td>
-        <td>{{data['date']}}</td>
-        <td>{{data['inverseRate']}}</td>
-
+    {% for data in datas %}
+        <td>{{data ['code']}}</td>
+        <td>{{data ['name']}}</td>
+        <td>{{data ['date']}}</td>
+        <td>{{data ['inverseRate']}}</td>
       </tr>
+    {% endfor %}
     </tbody>
+</table>
 
 {% endblock %}
