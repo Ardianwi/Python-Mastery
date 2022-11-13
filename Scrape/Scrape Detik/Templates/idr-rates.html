@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+<table class="table">
+    <thead>
+      <tr>
+        <th>code</th>
+        <th>name</th>
+        <th>date</th>
+        <th>inverseRate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+    {% for data in datas %}
+        <td>{{data ['code']}}</td>
+        <td>{{data ['name']}}</td>
+        <td>{{data ['date']}}</td>
+        <td>{{data ['inverseRate']}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
